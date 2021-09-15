@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--------Created by Chitra Hajra Roy,May 28,2021-------->
+<html lang="en">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMR-Calculation-html </title>
+<meta content="html form for bmr calculator comp 125 centennial college" name="keywords">
+<meta content="example of form properties with javascript" name="description">
+
+<link href="bmr.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div class="container">
+        <h1><span lang="en-ca">BMR Calculator</span></h1>
+
+<div style="display:inline-block">
+		<button type="button"  id="btnMetric" onclick="changeMeasureUnit('metric')">Metric</button>
+		<button type="button"  id="btnImperial" onclick="changeMeasureUnit('imperial')">Imperial</button>
+</div><br><br>
+
+
+<form id="BMR_CALC_FORM">
+<div style="width: 100%;">
+   <div style="width: 50%; float: left;"> 
+	<fieldset >
+	    <label>Gender:</label> <select id ="gender" name="gender" tabindex="1" style="width:170px;" required="required">
+	        <option></option>
+	        <option value="F">Female</option>
+	        <option value="M">Male</option>
+	        </select><br><br>
+	    <label for="ageVal">Age:</label> <input id ="ageVal" name="Age" tabindex="3" type="number" placeholder="age,eg;1-100" required="required"><br><br>
+	
+	    <div id="metricform">
+						<label>Your Height</label><br>
+						<label for="mValue">Meter:</label><input id="mtrVal" name="meter" tabindex="5" type="number" placeholder="meter" required="required"><br><br>
+						<label for="cmValue">Centimeter:</label><input id="cmVal" name="centimeter" tabindex="7" type="number" placeholder="centemeter" required="required"><br><br>
+						<label>Your Weight</label><br>
+						<label for="kgValue">Kilogram:</label><input id="kgVal" name="kgValue" tabindex="9" type="number" placeholder="kilogram" required="required"><br>
+		</div>
+	    <div id="imperialform" style="display:none">
+						<label>Your Height</label><br>
+						<label for="fValue">Feet:</label><input id="ftVal" name="Feet" tabindex="5" type="number" placeholder="feet" required="required"><br><br>
+						<label for="iValue">Inches:</label><input id="incVal" name="Inches" tabindex="7" type="number" placeholder="inch" required="required"><br><br>
+						<label>Your Weight</label><br>
+						<label for="sValue">Stones:</label><input id="stVal" name="Stones" tabindex="9" type="number" placeholder="stone" ><br><br>
+						<label for="pValue">Pounds:</label><input id="lbVal" name="Pounds" tabindex="11" type="number" placeholder="lb" required="required"><br><br>
+		</div>
+	</fieldset><br>
+   </div>	
+<div style="margin-left: 50%;"> 
+	<fieldset style="width:95%;text-align:left;height:250px">
+	<b><label> Select your activity level:</label></b>
+	
+	
+	<br><input  name="optSelect" type="radio" id="level1"  style="height: 20px" tabindex="40" value="1.2" required="required"
+	     oninvalid="this.setCustomValidity('Select Any of this for calorie calculation')" oninput="this.setCustomValidity('')"><span lang="en-ca">I am 
+	sedentary(little or no activity exercise)<br></span>
+	<input name="optSelect" type="radio" id="level2"  tabindex="41" value="1.275" ><span lang="en-ca">I am lightly active 
+	(light exercise or sports 1-3 days per week)<br></span>
+	<input name="optSelect" type="radio" id="level3"  tabindex="42" value="1.55"><span lang="en-ca">I am moderately 
+	active(moderately exercise or sports 3-5 days)<br></span>
+	<input name="optSelect" type="radio" id="level4"  tabindex="43" value="1.725"><span lang="en-ca">I am very 
+	active(hard exercise or sports 6-7 days per week)<br></span>
+	<input name="optSelect" type="radio" id="level5"  tabindex="44" value="1.9"><span lang="en-ca">I am super active 
+	(very hard exercise or sports and a physical job or 2x training)</span> <br>
+	<br>
+</fieldset><br> 
+</div>
+
+</div>
+<br><br>
+<div style="display:inline-block"> 
+     <button type="submit" id="button">Calculate Your BMR</button>
+     
+ </div>
+  </form>
+
+
+<input  type="button" id="reset" value="Reset" onclick="formReset()">
+
+<h3 id="convert">&nbsp; </h3>
+<h3 id="calorie">&nbsp;</h3>
+
+</main>
+    
+<footer>
+<br>
+	<p id="copyright">&copy;&nbsp;Chitra Roy, College id - 301148774. All right reserved..</p>
+</footer>
+
+<script src="bmr.js"></script>	
+</div>
+</body>
+</html>
